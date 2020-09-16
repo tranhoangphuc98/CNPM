@@ -1,4 +1,4 @@
-use Ass1
+use school
 create table nguoi(
 	id char(12) NOT NULL,
 	cmnd char(12),
@@ -166,7 +166,7 @@ create table nhomcahatBH(
 	maBH char(8) not null,
 	STTvongthi char(3) not null,
 	maMT char(4) not null,
-	primary key(maNhom,maBH,STTvongthi,maMT)
+	primary key(maNhom,maBH)
 )
 create table vongbanket(
 	STTvongthi char(3) not null,
@@ -187,7 +187,7 @@ create table TShattaivongbanket(
 	maBH char(8) not null,
 	STTvongthi char(3) not null,
 	maMT char(4) not null,
-	primary key(maTS,maBH,STTvongthi,maMT)
+	primary key(maTS,maBH)
 )
 create table vonggala(
 	STTvongthi char(3) not null,
@@ -195,7 +195,7 @@ create table vonggala(
 	chude char(100) not null,
 	maNHD char(12) not null,
 	HatDoiFlag bit,
-	primary key(STTvongthi,maMT,maNHD)
+	primary key(STTvongthi,maMT)
 )
 create table TSthamgiavonggala(
 	STTvongthi char(3) not null,
@@ -210,7 +210,7 @@ create table TShattaivonggala(
 	maBH char(8) not null,
 	STTvongthi char(3) not null,
 	maMT char(4) not null,
-	primary key(maTS,maBH,STTvongthi,maMT)
+	primary key(maTS,maBH)
 )
 
 
