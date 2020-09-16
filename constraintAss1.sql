@@ -28,37 +28,62 @@ add constraint FK_phatsong_kenhtruyenhinh foreign key(maK) references kenhtruyen
 
 alter table vongthi
 add constraint FK_vongthi_muathi foreign key(maMT) references muathi(maMT)
+
+/*Đã thêm*/
+alter table TSthamgiaVT
+add constraint FK_TSthamgiaVT_vongthi_STTVongthi_MaMT foreign key(STTvongthi,maMT) references vongthi(STTvongthi,maMT)
+
+/*bỏ*/
 /*
 alter table TSthamgiaVT
 add constraint FK_TSthamgiaVT_vongthi foreign key(STTvongthi) references vongthi(STTvongthi)
 alter table TSthamgiaVT
-add constraint FK_TSthamgiaVT_vongthi_muathi foreign key(maMT) references vongthi(maMT)*/
+add constraint FK_TSthamgiaVT_vongthi_muathi foreign key(maMT) references vongthi(maMT)
+*/
+
 alter table TSthamgiaVT
 add constraint FK_TSthamgiaVT_thisinh foreign key(maTS) references thisinh(maTS)
 
-/*alter table vongthugiong
-add constraint FK_vongthugiong_vongthi_muathi foreign key(maMT) references vongthi(maMT)
+/*Đã thêm*/
+/*Đề không yêu cầu nhưng thích thì thêm thôi*/
+alter table vongthugiong
+add constraint FK_vongthugiong_vongthi_STTVongthi_muathi foreign key(STTvongthi,maMT) references vongthi(STTvongthi,maMT)
+
+/*bỏ*/
+/*
 alter table vongthugiong
 add constraint FK_vongthugiong_vongthi foreign key(STTvongthi) references vongthi(STTvongthi)
 */
 
+/*Đã thêm*/
+/*Đề không yêu cầu nhưng thích thì thêm thôi*/
+alter table TSthamgiathugiong
+add constraint FK_TSthamgiavongthugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
 
-/*alter table TSthamgiathugiong
-add constraint FK_TSthamgiavongthugiong_vongthugiong_muathi foreign key(maMT) references vongthugiong(maMT)
+/*bỏ*/
+/*
 alter table TSthamgiathugiong
 add constraint FK_TSthamgiavongthugiong_vongthugiong foreign key(STTvongthi) references vongthugiong(STTvongthi)
 */
 alter table TSthamgiathugiong
 add constraint FK_TSthamgiathugiong_thisinh foreign key(maTS) references thisinh(maTS)
 
+/*Đã thêm*/
+alter table TShattaivongthugiong
+add constraint FK_TSthamgiathugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
+
+/*bỏ*/
+/*
 alter table TShattaivongthugiong
 add constraint FK_TShattaivongthugiong_vongthugiong_muathi foreign key(maMT) references vongthugiong(maMT)
 
 alter table TShattaivongthugiong
 add constraint FK_TShattaivongthugiong_vongthugiong foreign key(STTvongthi) references vongthugiong(STTvongthi)
+*/
 
 alter table TShattaivongthugiong
 add constraint FK_TShattaivongthugiong_thisinh foreign key(maTS) references thisinh(maTS)
+
 alter table TShattaivongthugiong
 add constraint FK_thamgiavongthugiong_baihat foreign key(maBH) references baihat(maBH)
 
