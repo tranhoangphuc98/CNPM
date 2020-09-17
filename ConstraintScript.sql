@@ -40,6 +40,9 @@ add constraint FK_TSthamgiaVT_thisinh foreign key(maTS) references thisinh(maTS)
 alter table TSthamgiathugiong
 add constraint FK_TSthamgiathugiong_thisinh foreign key(maTS) references thisinh(maTS)
 
+alter table TSthamgiathugiong
+add constraint FK_TSthamgiathugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
+
 /* Tạo constraint cho bảng TShattaivongthugiong*/
 alter table TShattaivongthugiong
 add constraint FK_TSthamgiathugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
