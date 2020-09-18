@@ -40,15 +40,18 @@ add constraint FK_TSthamgiaVT_thisinh foreign key(maTS) references thisinh(maTS)
 alter table TSthamgiathugiong
 add constraint FK_TSthamgiathugiong_thisinh foreign key(maTS) references thisinh(maTS)
 
+alter table TSthamgiathugiong
+add constraint FK_TSgiamgiathugiong_vongthugiong foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
+
 /* Tạo constraint cho bảng TShattaivongthugiong*/
 alter table TShattaivongthugiong
-add constraint FK_TSthamgiathugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
+add constraint FK_TShattaivongthugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
 
 alter table TShattaivongthugiong
 add constraint FK_TShattaivongthugiong_thisinh foreign key(maTS) references thisinh(maTS)
 
 alter table TShattaivongthugiong
-add constraint FK_thamgiavongthugiong_baihat foreign key(maBH) references baihat(maBH)
+add constraint FK_TShattaivongthugiong_baihat foreign key(maBH) references baihat(maBH)
 
 /* Tạo constraint cho bảng TShattaivongnhahat*/
 alter table TShattaivongnhahat
@@ -62,7 +65,7 @@ alter table nhomcahatBH
 add constraint FK_nhomcahatBH_nhomca foreign key(maNhom) references nhomca(maNhom)
 
 alter table nhomcahatBH
-add constraint FK_nhomcahatBH_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongnhahat(STTvongthi,maMT)
+add constraint FK_nhomcahatBH_vongnhahat_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongnhahat(STTvongthi,maMT)
 
 /* Tạo constraint cho bảng TSthamgiavongbanket*/ 
 alter table TSthamgiavongbanket
