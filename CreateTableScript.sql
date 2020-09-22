@@ -1,4 +1,3 @@
-use school
 create table nguoi(
 	id char(12) NOT NULL,
 	cmnd char(12),
@@ -115,6 +114,7 @@ create table TSthamgiaVT(
 	KQ int default -1,
 	primary key(STTvongthi,maTS,maMT)
 )
+
 create table vongthugiong(
 	STTvongthi char(3)not null,
 	maMT char(4)not null,
@@ -152,13 +152,14 @@ create table TShattaivongnhahat(
 	maBH char(8) not null,
 	primary key(STTvongthi,maMT,maTS,maBH)
 )
+drop table nhomca
 create table nhomca(
 	maNhom char(8) not null,
 	tenNhom nvarchar(50),
-	maTS1 char(12)not null,
-	maTS2 char(12)not null,
-	maTS3 char(12)not null,
-	maTS4 char(12)not null,
+	maTS1 char(12)not null unique,
+	maTS2 char(12)not null unique,
+	maTS3 char(12)not null unique,
+	maTS4 char(12)not null unique,
 	primary key(maNhom)
 )
 create table nhomcahatBH(

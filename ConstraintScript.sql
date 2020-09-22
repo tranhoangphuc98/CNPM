@@ -1,7 +1,6 @@
 ﻿
 alter table nghesi
 add constraint FK_nghesi_nguoi foreign key(maNS) references nguoi(id)
-
 alter table chuongtrinhMCdan
 add constraint FK_chuongtrinhMCdan_nghesi foreign key(maMC) references nghesi(maNS)
 
@@ -41,7 +40,11 @@ alter table TSthamgiathugiong
 add constraint FK_TSthamgiathugiong_thisinh foreign key(maTS) references thisinh(maTS)
 
 alter table TSthamgiathugiong
+<<<<<<< HEAD
 add constraint FK_TSgiamgiathugiong_vongthugiong foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
+=======
+add constraint FK_TSthamgiathugiong_vongthugiong_STTvongthi_maMT foreign key(STTvongthi,maMT) references vongthugiong(STTvongthi,maMT)
+>>>>>>> c78ed8d04d5d2ba2443ed41c7e852b0081f9e9e0
 
 /* Tạo constraint cho bảng TShattaivongthugiong*/
 alter table TShattaivongthugiong
