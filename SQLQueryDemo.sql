@@ -276,3 +276,10 @@ insert into muathi(maMT,ngayBD,ngayKT) values('','1998/01/21','1998/01/21');
 
 select* from muathi
 select* from nguoi
+
+-------------------------
+-- Select cau 1
+-------------------------
+select nguoi.cmnd, nguoi.ten, ts.diaChi, ts.dienThoai
+from nguoi, thisinh as ts
+where nguoi.id=ts.maTS and maTS = (select top 1 maTS from TSthamgiavonggala where maMT = (select maMT from muathi where year(ngayBD)='2012') order by(tongsoTN) desc)
